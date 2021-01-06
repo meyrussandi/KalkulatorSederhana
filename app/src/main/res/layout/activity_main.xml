@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        style="@style/editText"
+        android:id="@+id/input_pertama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/checkbox_pertama"/>
+    <CheckBox
+        android:onClick="onCheckboxClicked"
+        style="@style/checkBox"
+        android:id="@+id/checkbox_pertama"
+        app:layout_constraintStart_toEndOf="@id/input_pertama"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <EditText
+        style="@style/editText"
+        android:id="@+id/input_kedua"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_pertama"
+        app:layout_constraintEnd_toStartOf="@id/checkbox_kedua"/>
+    <CheckBox
+        android:onClick="onCheckboxClicked"
+        style="@style/checkBox"
+        android:id="@+id/checkbox_kedua"
+        app:layout_constraintStart_toEndOf="@id/input_kedua"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_pertama"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <EditText
+        style="@style/editText"
+        android:id="@+id/input_ketiga"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_kedua"
+        app:layout_constraintEnd_toStartOf="@id/checkbox_ketiga"/>
+    <CheckBox
+        android:onClick="onCheckboxClicked"
+        style="@style/checkBox"
+        android:id="@+id/checkbox_ketiga"
+        app:layout_constraintStart_toEndOf="@id/input_ketiga"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_kedua"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:weightSum="4"
+        android:layout_margin="24dp"
+        android:id="@+id/tombol"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/input_ketiga"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/tombol"
+            android:text="+"
+            android:id="@+id/tambah"
+            android:layout_marginRight="8dp" />
+        <Button
+            style="@style/tombol"
+            android:text="-"
+            android:id="@+id/kurang"
+            android:layout_marginRight="8dp" />
+        <Button
+            style="@style/tombol"
+            android:text="X"
+            android:id="@+id/perkalian"
+            android:layout_marginRight="8dp" />
+        <Button
+            style="@style/tombol"
+            android:text="/"
+            android:id="@+id/pembagian"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/garis"
+        android:layout_margin="24dp"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintTop_toBottomOf="@id/tombol"/>
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:layout_margin="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hasil : "
+        app:layout_constraintTop_toBottomOf="@id/garis"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/hasil"
+        android:textColor="@color/black"
+        android:layout_margin="24dp"
+        android:textSize="32sp"
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/garis"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
